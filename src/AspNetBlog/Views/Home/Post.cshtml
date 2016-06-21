@@ -1,17 +1,19 @@
-﻿@{
+﻿@model AspNetBlog.Models.Post
+
+@{
     Layout = "_Layout";
 }
 
 <div class='blog-post'>
 <h2 class='title'>
-    <a href="#">@ViewBag.Title</a>
+    <a href="#">@Model.Title</a>
 </h2>
 <p class='metadata'>
-<spam>@ViewBag.Posted</spam>
-  by <a href="">@ViewBag.Author</a>
+<spam>@Model.PostedDate</spam>
+  by <a href="">@Model.Author</a>
 </p>
 <section>
-    @ViewBag.Body
+    @Model.Body
 </section>
 
 </div><!-- /.blog-post -->

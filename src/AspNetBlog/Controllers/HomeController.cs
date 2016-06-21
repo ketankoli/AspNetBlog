@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using AspNetBlog.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,11 +19,14 @@ namespace AspNetBlog.Controllers
 
         public IActionResult Post( long id)
         {
-            ViewBag.Title = "My blog post";
+            var post = new Post();
+
+            ViewBag.Title = "Ketan's First Blog post";
             ViewBag.Posted = DateTime.Now;
             ViewBag.Author = "Ketan Koli";
-            ViewBag.Body = "This is my first blog post";
-            return View();
+            ViewBag.Body = "This is my first blog post on ASP .NET MVC 6";
+
+            return View(post);
 
         }
 
