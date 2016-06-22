@@ -18,9 +18,8 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc(routes =>
-                routes.MapRoute("Default",
-                     "{controller=Home}/{action=Index}/{id?}")); 
+            app.UseMvc(routes => routes.MapRoute(
+                "Default", "{controller=Home}/{action=Index}/{id?}"));
 
             app.UseFileServer();
         }

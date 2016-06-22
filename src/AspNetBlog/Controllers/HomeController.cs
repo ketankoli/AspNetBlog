@@ -14,27 +14,28 @@ namespace AspNetBlog.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
-        }
+            var posts = new[] {
+                new Post {
+                    Title = "Blog Post #1",
+                    PostedDate = DateTime.Now,
+                    Author = "Jess Chadwick",
+                    Body = "This is my first blog post about ASP.NET MVC 6!",
+                },
+                new Post {
+                    Title = "Blog Post #2",
+                    PostedDate = DateTime.Now,
+                    Author = "Jess Chadwick",
+                    Body = "This is my second blog post about ASP.NET MVC 6!",
+                },
+                new Post {
+                    Title = "Blog Post #3",
+                    PostedDate = DateTime.Now,
+                    Author = "Jess Chadwick",
+                    Body = "This is my third blog post about ASP.NET MVC 6!",
+                }
+            };
 
-        public IActionResult Post( long id)
-        {
-            var post = new Post();
-
-            ViewBag.Title = "Ketan's First Blog post";
-            ViewBag.Posted = DateTime.Now;
-            ViewBag.Author = "Ketan Koli";
-            ViewBag.Body = "This is my first blog post on ASP .NET MVC 6";
-
-            return View(post);
-
-        }
-
-        public IActionResult Get()
-        {
-          
-            return View();
-
+            return View(posts);
         }
 
         public int  Echo(int  id)
